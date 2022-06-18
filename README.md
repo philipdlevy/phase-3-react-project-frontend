@@ -15,7 +15,7 @@ run npm install and npm start
 Open [http://localhost:3000] to view it in your browser.
 Follow directions for beckend [url here]
 
-### Licensing
+### LICENSING (MIT)
 Copyright (c) {{ 2022 }} 
 
 Permission is hereby granted, free of charge, to any person obtaining
