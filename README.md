@@ -1,6 +1,6 @@
 # Phase 3 React Project Frontend
 This is a frontend application for a book lister application. The objective of this project is to showcase the work I did in Flatiron School. 
-In this application you can create a list books to keep records of what you want to read. 
+In this application you can create a list of books to keep records of what you want to read. 
 Simply create a book in the create book section of the page, and it will be added to your list! 
 You can delete books you don't want anymore or edit them if the book has changed. 
 
