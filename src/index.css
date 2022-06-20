@@ -99,9 +99,16 @@ button:hover {
   font-size: 50px;
 }
 
-/* .buttonshift1 {
-  position: fixed;
-  display: inline-block;
+
+
+
+
+.form {
+  margin: auto;
+  width: 50%;
 }
-.buttonshift2 */
+
+.fontcolor {
+  color: whitesmoke
+}
 
