@@ -41,7 +41,7 @@ code {
   min-height: 50%;
 }
 
-button {
+.button1 {
   padding: 15px 25px;
   color: #485461;
   border: 1px #485461 solid;
@@ -54,14 +54,54 @@ button {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
+
+}
+.button2 {
+  padding: 15px 25px;
+  color: #485461;
+  border: 1px #485461 solid;
+  background-color: transparent;
+
+  position: absolute;
+  top: 200px;
+  width: 13%;
+  right: 840px;
+  padding: 20px 35px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+
+}
+.button3 {
+  padding: 15px 25px;
+  color: #485461;
+  border: 1px #485461 solid;
+  background-color: transparent;
+
+  position: absolute;
+  top: 10px;
+  width: 10%;
+  right: 0px;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
 button:hover {
   background-color: #838383;
 }
 
-
-
 .welcome {
+  position: relative;
   text-align: center;
-  color: aliceblue;
+  color: whitesmoke;
+  margin-top: 10px;
+  font-size: 50px;
 }
+
+/* .buttonshift1 {
+  position: fixed;
+  display: inline-block;
+}
+.buttonshift2 */
+
