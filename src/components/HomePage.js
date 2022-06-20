@@ -2,8 +2,11 @@ import React from 'react'
 
 function HomePage() {
   return (
-    <div>
-         <h1>HomePage</h1>
+    <div className="bg">
+      <h1 className='welcome'>Welcome!</h1>
+        <button>HomePage</button>
+        <button>HomePage</button>
+        <button>HomePage</button>
     </div>
   );
 }
