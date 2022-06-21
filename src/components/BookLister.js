@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from "react-router-dom"
 
 
 function BookLister() {
   const [books, setBooks] = useState([])
-  // const { id, title, author_name, description, price, pages } = bookObj
-  console.log(books)
+  const { id, title, author_name, description, price, pages } = books
+  console.log("books", books)
 
   useEffect(() => {
     fetch("http://localhost:9292/books")
@@ -14,14 +15,16 @@ function BookLister() {
     .catch((error) => alert(error)) 
   }, [])
 
-  const displayedBooks = books.map((exercise) => {
-    return <li className='fontcolor'> {exercise.title}</li>
+  const displayedBooks = books.map((book) => {
+    return <li className='fontcolor' key={book.id}> {book.title}</li>
   })
 
   return (
     <div className='listerPosition'>
         <h2 className='fontcolor'>Book List</h2>
+        <Link to={`/books/${id}`}>
         {displayedBooks}
+        </Link>
     </div>
   )
 }

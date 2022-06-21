@@ -99,7 +99,9 @@ button:hover {
   font-size: 50px;
 }
 
-
+.fontcolor {
+  color: whitesmoke
+}
 
 
 
@@ -107,10 +109,6 @@ button:hover {
   margin: auto;
   width: 50%;
   top: 500px;
-}
-
-.fontcolor {
-  color: whitesmoke
 }
 
 .listerPosition {
