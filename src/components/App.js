@@ -1,17 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
+import NavBar from './NavBar';
 import HomePage from './HomePage';
-// import Navigation from './Navigation';
 import AddBook from './AddBook';
 import BookDetail from './BookDetail';
 import BookLister from './BookLister';
 
+
 function App() {
   return (
     <div className="bg">
+      <NavBar />
       <Switch>
-      {/* <Navigation />  */}
+
       <Route exact path="/">
         <HomePage />
       </Route>
@@ -28,12 +30,14 @@ function App() {
         <BookDetail />
       </Route>
 
+    
+
       <Route>
-        <h1 style={{textAlign: "center"}}>
+        <h1 className='fontcolor' style={{textAlign: "center"}}>
           <strong>404</strong>
-          <h3><strong>ERROR! PAGE NOT FOUND!</strong></h3>
+          <h3 className='fontcolor'><strong>ERROR! PAGE NOT FOUND!</strong></h3>
         </h1>
-        </Route>
+      </Route>
 
       </Switch>
     </div>

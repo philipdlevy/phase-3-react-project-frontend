@@ -63,11 +63,11 @@ code {
   background-color: transparent;
 
   position: absolute;
-  top: 200px;
+  top: 10px;
   width: 13%;
   right: 840px;
-  padding: 20px 35px;
-  font-size: 20px;
+  padding: 14px 28px;
+  font-size: 16px;
   cursor: pointer;
   text-align: center;
 
@@ -95,7 +95,7 @@ button:hover {
   position: relative;
   text-align: center;
   color: whitesmoke;
-  margin-top: 10px;
+  margin-top: 150px;
   font-size: 50px;
 }
 
@@ -106,9 +106,15 @@ button:hover {
 .form {
   margin: auto;
   width: 50%;
+  top: 500px;
 }
 
 .fontcolor {
   color: whitesmoke
 }
 
+.listerPosition {
+  position:fixed;
+  top: 100px;
+  left: 10px;
+}
