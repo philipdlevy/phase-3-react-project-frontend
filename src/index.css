@@ -116,3 +116,17 @@ button:hover {
   top: 100px;
   left: 10px;
 }
+
+
+.backButton {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(54,54,54);
+  background: radial-gradient(circle, rgba(54,54,54,1) 0%, rgba(179,179,179,1) 100%);
+  padding: 5px 25px;
+  border-radius: 4px;
+  margin-left: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}

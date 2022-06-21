@@ -38,6 +38,16 @@ if (!isLoaded) return <h2>Loading...</h2>
     <div className='listerPosition fontcolor'>
         <h1>BookDetail</h1>
         <li>Title: {title}</li>
+        <li>Author: {author_name}</li>
+        <li>Description: {description}</li>
+        <li>Price: ${price}</li>
+        <li>Pages: {pages}</li>
+        <br></br>
+        <button
+        className="backButton"
+        onClick={() => history.push("/books")}>
+        Back
+        </button>
     </div>
   )
 }
