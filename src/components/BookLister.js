@@ -16,14 +16,14 @@ function BookLister() {
   }, [])
 
   const displayedBooks = books.map((book) => {
-    return <li className='fontcolor' key={book.id}> {book.title}</li>
+    return <li className='fontcolor' key={book.id}>{book.title}</li>
   })
 
   return (
     <div className='listerPosition'>
         <h2 className='fontcolor'>Book List</h2>
         <Link to={`/books/${id}`}>
-        {displayedBooks}
+          {displayedBooks}
         </Link>
     </div>
   )
