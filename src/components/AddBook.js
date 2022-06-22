@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 
 function AddBook() {
   const [titleData, setTitleData] = useState("")
-  // console.log("title", titleData)
   const [authorData, setAuthorData] = useState("")
   const [descriptionData, setDescriptionData] = useState("")
   const [priceData, setPriceData] = useState("")
@@ -38,6 +37,35 @@ function AddBook() {
       .then(history.push("/books"))
       .catch((error) => alert(error));
   }
+
+  // fetch for updating a book
+  // function handleUpdatedBook(event) {
+  //   event.preventDefault()
+  
+
+  //   if (titleData.trim() == "" || authorData.trim() == "" || descriptionData.trim == "" || descriptionData.trim() == "" || priceData.trim() == "" || pagesData.trim() == "") {
+  //     return alert("Missing Data")
+  //   }
+
+  //   const updateBookData = {
+  //     title: titleData, 
+  //     author_name: authorData, 
+  //     description: descriptionData, 
+  //     price: priceData, 
+  //     pages: pagesData
+  //   };
+
+  //   fetch(`http://localhost:9292/books/${id}`, {
+  //       method: "PATCH", 
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       }, 
+  //       body: JSON.stringify(updateBookData), 
+  //     })
+  //     .then((resp) => resp.json())
+      // .then(history.push("/books"))
+  //     .catch((error) => alert(error));
+  // }
 
 
   return (
@@ -80,13 +108,6 @@ function AddBook() {
         name="pages"
         onChange={(e) => setPagesData(e.target.value)}
         /><br/>
-        {/* <label className='fontcolor'>Image URL</label>
-        <input  */}
-        {/* // value={imageData}
-        // type="text" 
-        // name="image" 
-        // onChange={(e) => setImageData(e.target.value)}
-        // /><br/> */}
         <input type="submit"></input>
       </form>
     </div>
