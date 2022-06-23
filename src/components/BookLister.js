@@ -38,15 +38,15 @@ function BookLister() {
 
   return (
     <div className='listerPosition'>
-      <h2 className='fontcolor'>Book List</h2>
-      <button>
+      <h2 className='fontcolor fixedPosition'>Book List</h2>
+      <button className='sorting1'>
         Sort titles by ascending order
       </button>
-      <button>
+      <button className='sorting2'>
         Sort titles by descending order
       </button>
       <Link to={`/authors`}>
-        <button>Sort by Authors</button>
+        <button className='sorting3'>Sort by Authors</button>
       </Link>  
       {displayedBooks}
     </div>
