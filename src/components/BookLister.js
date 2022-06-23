@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {Link} from "react-router-dom"
 
-import BookDetail from './BookDetail';
 
 
 function BookLister() {
@@ -28,7 +27,7 @@ function BookLister() {
   }, [])
 
   const displayedBooks = books.map((book) => {
-    return <Link to={`/books/${book.id}`}> <li className='fontcolor' key={books.
+    return <Link to={`/books/${book.id}`}> <li className='fontcolor' key={book.
     id}>{book.title}</li> </Link>
   })
 
@@ -39,11 +38,17 @@ function BookLister() {
 
   return (
     <div className='listerPosition'>
-        <h2 className='fontcolor'>Book List</h2>
-          {displayedBooks}
-          <button>
-            Sort
-          </button>
+      <h2 className='fontcolor'>Book List</h2>
+      <button>
+        Sort titles by ascending order
+      </button>
+      <button>
+        Sort titles by descending order
+      </button>
+      <Link to={`/authors`}>
+        <button>Sort by Authors</button>
+      </Link>  
+      {displayedBooks}
     </div>
   )
 }

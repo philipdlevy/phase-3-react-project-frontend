@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import AddBook from './AddBook';
 import BookDetail from './BookDetail';
 import BookLister from './BookLister';
+import AuthorLister from './AuthorLister';
 
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
         <BookDetail />
       </Route>
 
-    
+      <Route exact path="/authors"> 
+        <AuthorLister />
+      </Route>    
 
       <Route>
         <h1 className='fontcolor' style={{textAlign: "center"}}>
