@@ -20,7 +20,8 @@ function AuthorLister() {
       })
 
   return (
-    <div className='fontcolor listerPosition'>AuthorLister
+    <div className='fontcolor listerPosition'>
+      <h2>Authors</h2>
         {displayedAuthors}
         <br></br>
         <button onClick={() => history.push("/books")}>

@@ -13,7 +13,6 @@ function BookLister() {
     fetch("http://localhost:9292/books")
     .then((resp) => resp.json())
     .then((books) => setBooks(books))
-
     .catch((error) => alert(error)) 
   }, [])
 
@@ -25,6 +24,12 @@ function BookLister() {
 
     .catch((error) => alert(error)) 
   }, [])
+
+  // to display filtered books
+  // const displayedAscendingBooks = books.map((book) => {
+  //   return <li className='fontcolor' key={book.
+  //   id}>{book.title}</li>
+  // })
 
   const displayedBooks = books.map((book) => {
     return <Link to={`/books/${book.id}`}> <li className='fontcolor' key={book.
@@ -39,12 +44,16 @@ function BookLister() {
   return (
     <div className='listerPosition'>
       <h2 className='fontcolor fixedPosition'>Book List</h2>
-      <button className='sorting1'>
+      <Link to={`/books/all/title_ascending`}>
+        <button className='sorting1'>
         Sort titles by ascending order
-      </button>
-      <button className='sorting2'>
-        Sort titles by descending order
-      </button>
+        </button>
+      </Link>
+      <Link to={`/books/all/title_descending`}>
+        <button className='sorting2'>
+          Sort titles by descending order
+        </button>
+      </Link>
       <Link to={`/authors`}>
         <button className='sorting3'>Sort by Authors</button>
       </Link>  
