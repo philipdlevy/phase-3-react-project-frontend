@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import NavBar from './NavBar';
@@ -10,6 +10,17 @@ import AuthorLister from './AuthorLister';
 
 
 function App() {
+  const [books, setBooks] = useState([])
+  console.log("books", books)
+
+  useEffect(() => {
+    fetch("http://localhost:9292/books")
+    .then((resp) => resp.json())
+    .then((books) => setBooks(books))
+    .catch((error) => alert(error)) 
+  }, [])
+
+
   return (
     <div className="bg">
       <NavBar />
@@ -20,7 +31,7 @@ function App() {
       </Route>
 
       <Route exact path="/books"> 
-        <BookLister />
+        <BookLister books={books}/>
       </Route> 
 
       <Route exact path="/books/new">  

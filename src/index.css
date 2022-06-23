@@ -161,23 +161,9 @@ button:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.sorting1 {
+.sorting {
   position: fixed;
   padding: 5px 10px;
   margin-top: -50px;
   margin-left: 140px;
-}
-
-.sorting2 {
-  position: fixed;
-  padding: 5px 10px;
-  margin-top: -50px;
-  margin-left: 350px;
-}
-
-.sorting3 {
-  position: fixed;
-  padding: 5px 70px;
-  margin-top: -50px;
-  margin-left: 567px;
 }
