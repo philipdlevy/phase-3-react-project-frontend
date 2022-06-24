@@ -21,7 +21,7 @@ function App() {
     .then((resp) => resp.json())
     .then((authors) => {
       setAuthors(authors)
-      debugger
+      // debugger
     })
     .catch((error) => alert(error)) 
     

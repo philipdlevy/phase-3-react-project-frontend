@@ -7,7 +7,7 @@ function AuthorDetail({ authors }) {
     books: []
   })
   const [isLoaded, setIsLoaded] = useState([])
-  console.log("the author", pickedAuthor)
+  console.log("author", pickedAuthor)
 
 
   const history = useHistory();
@@ -22,10 +22,19 @@ function AuthorDetail({ authors }) {
     setIsLoaded(true)
   }, [authors])
 
+  const displayedAuthorsBooks = pickedAuthor.books.map((book) => {
+    return <li className='fontcolor' key={book.
+    id}>{book.title}</li>
+  })
+
+
   return (
     <div className='listerPosition fontcolor'>
-        <h2 className='fontcolor fixedPosition'>Authors Books</h2>
+        <h2 className='fontcolor fixedPosition underline'>Author Info</h2>
         <li>Author name: {pickedAuthor.name}</li>
+        <br></br>
+        <h2 className="underline">Authors books in your list</h2>
+        {displayedAuthorsBooks}
         <button
           className="backButton"
           onClick={() => history.push("/authors")}>
