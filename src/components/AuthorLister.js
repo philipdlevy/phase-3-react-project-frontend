@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import {useHistory} from "react-router-dom"
+import {Link} from "react-router-dom"
 
-function AuthorLister() {
-    const [authors, setAuthors] = useState([])
+function AuthorLister({ authors }) {
+    // const [authors, setAuthors] = useState([])
 
     const history = useHistory();
 
-    useEffect(() => {
-        fetch("http://localhost:9292/authors")
-        .then((resp) => resp.json())
-        .then((authors) => setAuthors(authors))
+    // useEffect(() => {
+    //     fetch("http://localhost:9292/authors")
+    //     .then((resp) => resp.json())
+    //     .then((authors) => setAuthors(authors))
     
-        .catch((error) => alert(error)) 
-      }, [])
+    //     .catch((error) => alert(error)) 
+    //   }, [])
 
 
-      const displayedAuthors = authors.map((author) => {
-        return <li className='fontcolor' key={author.id}>{author.name}</li>
-      })
+    const displayedAuthors = authors.map((author) => {
+      return <Link to={`/authors/${author.id}`}> <li className='fontcolor' key={author.id}>{author.name}</li> </Link>
+    })
 
   return (
     <div className='fontcolor listerPosition'>

@@ -7,11 +7,14 @@ import AddBook from './AddBook';
 import BookDetail from './BookDetail';
 import BookLister from './BookLister';
 import AuthorLister from './AuthorLister';
+import AuthorDetail from './AuthorDetail';
 
 
 function App() {
   const [books, setBooks] = useState([])
-  console.log("books", books)
+  const [authors, setAuthors] = useState([])
+  console.log("authors", authors)
+  // console.log("books", books)
 
   useEffect(() => {
     fetch("http://localhost:9292/books")
@@ -19,6 +22,20 @@ function App() {
     .then((books) => setBooks(books))
     .catch((error) => alert(error)) 
   }, [])
+
+
+  useEffect(() => {
+    fetch("http://localhost:9292/authors")
+    .then((resp) => resp.json())
+    .then((authors) => setAuthors(authors))
+    .catch((error) => alert(error)) 
+  }, [])
+
+  function onDeleteBook(id) {
+    const updatedBookArray = books.filter(book => book.id != parseInt(id))
+    setBooks(updatedBookArray)
+    console.log("books", books)
+}
 
 
   return (
@@ -31,7 +48,7 @@ function App() {
       </Route>
 
       <Route exact path="/books"> 
-        <BookLister books={books}/>
+        <BookLister books={books} onDeleteBook={onDeleteBook}/>
       </Route> 
 
       <Route exact path="/books/new">  
@@ -39,12 +56,16 @@ function App() {
       </Route>
 
       <Route exact path="/books/:id"> 
-        <BookDetail />
+        <BookDetail books={books} onDeleteBook={onDeleteBook}/>
       </Route>
 
       <Route exact path="/authors"> 
-        <AuthorLister />
+        <AuthorLister authors={authors}/>
       </Route>    
+
+      <Route exact path="/authors/:id"> 
+        <AuthorDetail authors={authors}/>
+      </Route>  
 
       <Route>
         <h1 className='fontcolor' style={{textAlign: "center"}}>

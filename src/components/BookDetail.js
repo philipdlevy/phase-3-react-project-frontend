@@ -3,30 +3,33 @@ import {useParams, useHistory} from "react-router-dom"
 
 import AddBook from './AddBook';
 
-function BookDetail() {
+function BookDetail({ books, onDeleteBook }) {
   // state for exerciseObj that is selected
   const [pickedBook, setPickedBook] = useState(null)
   const [isLoaded, setIsLoaded] = useState(null)
   const [editing, setEditing] = useState(false)
 
 
-  const [titleData, setTitleData] = useState("")
-  const [authorData, setAuthorData] = useState("")
-  const [descriptionData, setDescriptionData] = useState("")
-  const [priceData, setPriceData] = useState("")
-  const [pagesData, setPagesData] = useState("")
+  // const [titleData, setTitleData] = useState("")
+  // const [authorData, setAuthorData] = useState("")
+  // const [descriptionData, setDescriptionData] = useState("")
+  // const [priceData, setPriceData] = useState("")
+  // const [pagesData, setPagesData] = useState("")
  
   const history = useHistory();
   let {id} = useParams()
 
   useEffect(() => {
-    fetch(`http://localhost:9292/books/${id}`)
-    .then(resp => resp.json())    
-    .then(bookData => {
-      setPickedBook(bookData)
-      setIsLoaded(true)
-    })
-    .catch((error) => alert(error));
+    const book = books.find((b => b.id == id))
+    setPickedBook(book)
+    setIsLoaded(true)
+    // fetch(`http://localhost:9292/books/${id}`)
+    // .then(resp => resp.json())    
+    // .then(bookData => {
+    //   setPickedBook(bookData)
+    //   setIsLoaded(true)
+    // })
+    // .catch((error) => alert(error));
   }, [])
 
   // fetch for deleting an object
@@ -36,11 +39,16 @@ function BookDetail() {
     })
     .then((resp) => resp.json())
     .then(() => {
+      onDeleteBook(id)
       history.push("/books")
     })
     .catch((error) => alert(error));
   }
   if (!isLoaded) return <h2>Loading...</h2>
+
+
+
+
 
   const {title, author_name, description, price, pages } = pickedBook
 
@@ -56,18 +64,16 @@ function BookDetail() {
         <li>Price: ${price}</li>
         <li>Pages: {pages}</li>
         <br></br>
-        <button className="deleteButton" onClick={handleDelete}>
-          Delete
-        </button>
-        <br></br>
         <button
           className="backButton"
           onClick={() => history.push("/books")}>
           Back
         </button>
-        <br></br>
         <button className="editButton" onClick={() => setEditing(true)}>
           edit
+        </button>
+        <button className="deleteButton" onClick={handleDelete}>
+          Delete
         </button>
       </div>
     )
