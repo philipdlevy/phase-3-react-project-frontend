@@ -17,6 +17,14 @@ function App() {
   // console.log("books", books)
 
   useEffect(() => {
+    fetch("http://localhost:9292/authors")
+    .then((resp) => resp.json())
+    .then((authors) => {
+      setAuthors(authors)
+      debugger
+    })
+    .catch((error) => alert(error)) 
+    
     fetch("http://localhost:9292/books")
     .then((resp) => resp.json())
     .then((books) => setBooks(books))
@@ -24,12 +32,12 @@ function App() {
   }, [])
 
 
-  useEffect(() => {
-    fetch("http://localhost:9292/authors")
-    .then((resp) => resp.json())
-    .then((authors) => setAuthors(authors))
-    .catch((error) => alert(error)) 
-  }, [])
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/authors")
+  //   .then((resp) => resp.json())
+  //   .then((authors) => setAuthors(authors))
+  //   .catch((error) => alert(error)) 
+  // }, [])
 
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
@@ -48,7 +56,7 @@ function App() {
       </Route>
 
       <Route exact path="/books"> 
-        <BookLister books={books} onDeleteBook={onDeleteBook}/>
+        <BookLister books={books}/>
       </Route> 
 
       <Route exact path="/books/new">  
