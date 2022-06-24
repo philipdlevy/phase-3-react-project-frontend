@@ -1,12 +1,13 @@
 import React, { useState, useEffect  } from "react"
 import {useParams, useHistory} from "react-router-dom"
 
-import AddBook from './AddBook';
+import EditBook from "./EditBook"
 
-function BookDetail({ books, onDeleteBook }) {
+function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
   const [pickedBook, setPickedBook] = useState(null)
   const [isLoaded, setIsLoaded] = useState(null)
   const [editing, setEditing] = useState(false)
+  // const [toggle, setToggle] = useState(true)
  
   const history = useHistory();
   let {id} = useParams()
@@ -15,7 +16,7 @@ function BookDetail({ books, onDeleteBook }) {
     const book = books.find((b => b.id == id))
     setPickedBook(book)
     setIsLoaded(true)
-  }, [])
+  }, [toggleBook])
 
   // fetch for deleting an object
   function handleDelete() {
@@ -32,10 +33,11 @@ function BookDetail({ books, onDeleteBook }) {
   if (!isLoaded) return <h2>Loading...</h2>
 
 
-  const {title, author_name, description, price, pages } = pickedBook
+  const {title, description, price, pages } = pickedBook
+  const author_name = pickedBook.author.name
 
   if (editing) {
-    return <AddBook />
+    return <EditBook pickedBook={pickedBook} toggleBook={toggleBook} setToggleBook={setToggleBook} setEditing={setEditing}/>
   } else {
     return (
       <div className='listerPosition fontcolor'>

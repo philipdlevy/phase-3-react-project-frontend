@@ -36,9 +36,8 @@ function AuthorDetail({ authors }) {
         <h2 className="underline">Authors books in your list</h2>
         {displayedAuthorsBooks}
         <button
-          className="backButton"
           onClick={() => history.push("/authors")}>
-          Back
+          Back to Authors
         </button>
     </div>
   )

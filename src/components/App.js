@@ -13,6 +13,7 @@ import AuthorDetail from './AuthorDetail';
 function App() {
   const [books, setBooks] = useState([])
   const [authors, setAuthors] = useState([])
+  const [toggleBook, setToggleBook] = useState(false)
   console.log("authors", authors)
   // console.log("books", books)
 
@@ -29,7 +30,7 @@ function App() {
     .then((resp) => resp.json())
     .then((books) => setBooks(books))
     .catch((error) => alert(error)) 
-  }, [])
+  }, [toggleBook])
 
 
   // useEffect(() => {
@@ -56,7 +57,7 @@ function App() {
       </Route>
 
       <Route exact path="/books"> 
-        <BookLister books={books}/>
+        <BookLister books={books} />
       </Route> 
 
       <Route exact path="/books/new">  
@@ -64,7 +65,7 @@ function App() {
       </Route>
 
       <Route exact path="/books/:id"> 
-        <BookDetail books={books} onDeleteBook={onDeleteBook}/>
+        <BookDetail books={books} onDeleteBook={onDeleteBook} toggleBook={toggleBook} setToggleBook={setToggleBook}/>
       </Route>
 
       <Route exact path="/authors"> 
