@@ -14,15 +14,12 @@ function App() {
   const [books, setBooks] = useState([])
   const [authors, setAuthors] = useState([])
   const [toggleBook, setToggleBook] = useState(false)
-  // console.log("authors", authors)
-  // console.log("books", books)
 
   useEffect(() => {
     fetch("http://localhost:9292/authors")
     .then((resp) => resp.json())
     .then((authors) => {
       setAuthors(authors)
-      // debugger
     })
     .catch((error) => alert(error)) 
     
@@ -43,7 +40,7 @@ function App() {
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
     setBooks(updatedBookArray)
-    console.log("books", books)
+    // console.log("books", books)
 }
 
 

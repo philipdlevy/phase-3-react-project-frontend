@@ -7,12 +7,12 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
   const [pickedBook, setPickedBook] = useState({
     title: "", 
     description: "", 
-    author: {author_name: ""},
+    author: {name: ""},
     price: 0, 
     pages: 0
   })
-  const [isLoaded, setIsLoaded] = useState(null)
   const [editing, setEditing] = useState(false)
+  console.log("pickedBook", pickedBook)
 
   // const [toggle, setToggle] = useState(true)
  
@@ -23,12 +23,11 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
     const book = books.find((b => b.id == id))
     if (book) {
       setPickedBook(book)
-      setIsLoaded(true)
     } else {
       setPickedBook({
         title: "", 
         description: "", 
-        author: {author_name: ""},
+        author: {name: ""},
         price: 0, 
         pages: 0
       })
@@ -48,7 +47,6 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
     })
     .catch((error) => alert(error));
   }
-  // if (!isLoaded) return <h2>Loading...</h2>
 
 
   // const {title, description, price, pages } = pickedBook

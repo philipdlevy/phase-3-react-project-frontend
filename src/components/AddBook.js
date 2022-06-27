@@ -75,6 +75,7 @@ function AddBook() {
       <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
         <label className='fontcolor'>Title</label>
         <input 
+        className='formLook'
         value={titleData}
         type="text" 
         name="title"
@@ -82,6 +83,7 @@ function AddBook() {
         /><br/>
         <label className='fontcolor'>Author</label>
         <input 
+        className='formLook'
         value={authorData}
         type="text" 
         name="author_name"
@@ -89,6 +91,7 @@ function AddBook() {
         /><br/>
         <label className='fontcolor'>Description</label>
         <input 
+        className='formLook'
         value={descriptionData}
         type="text" 
         name="description"
@@ -96,6 +99,7 @@ function AddBook() {
         /><br/>
         <label className='fontcolor'>Price</label>
         <input 
+        className='formLook'
         value={priceData}
         type="text" 
         name="price"
@@ -103,12 +107,13 @@ function AddBook() {
         /><br/>
         <label className='fontcolor'>Pages</label>
         <input 
+        className='formLook'
         value={pagesData}
         type="text" 
         name="pages"
         onChange={(e) => setPagesData(e.target.value)}
         /><br/>
-        <input type="submit"></input>
+        <input type="submit" className='formLook'></input>
       </form>
     </div>
   )
