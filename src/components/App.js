@@ -14,7 +14,7 @@ function App() {
   const [books, setBooks] = useState([])
   const [authors, setAuthors] = useState([])
   const [toggleBook, setToggleBook] = useState(false)
-  console.log("authors", authors)
+  // console.log("authors", authors)
   // console.log("books", books)
 
   useEffect(() => {
@@ -64,7 +64,7 @@ function App() {
         <AddBook />
       </Route>
 
-      <Route exact path="/books/:id"> 
+      <Route path="/books/:id"> 
         <BookDetail books={books} onDeleteBook={onDeleteBook} toggleBook={toggleBook} setToggleBook={setToggleBook}/>
       </Route>
 
@@ -72,7 +72,7 @@ function App() {
         <AuthorLister authors={authors}/>
       </Route>    
 
-      <Route exact path="/authors/:id"> 
+      <Route path="/authors/:id"> 
         <AuthorDetail authors={authors}/>
       </Route>  
 
