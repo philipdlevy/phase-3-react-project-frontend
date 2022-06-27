@@ -61,7 +61,7 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
       <div className='listerPosition fontcolor'>
         <h1>BookDetail</h1>
         <li>Title: {pickedBook.title}</li>
-        <li>Author: {pickedBook.author.author_name}</li>
+        <li>Author: {pickedBook.author.name}</li>
         <li>Description: {pickedBook.description}</li>
         <li>Price: ${pickedBook.price}</li>
         <li>Pages: {pickedBook.pages}</li>

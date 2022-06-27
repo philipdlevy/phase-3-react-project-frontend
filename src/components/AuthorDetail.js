@@ -6,20 +6,21 @@ function AuthorDetail({ authors }) {
     name: "", 
     books: []
   })
-  const [isLoaded, setIsLoaded] = useState([])
-  console.log("author", pickedAuthor)
 
 
   const history = useHistory();
   let {id} = useParams()
 
   useEffect(() => {
-    console.log("inside", pickedAuthor)
-    // debugger
-    console.log("authors", authors)
     const author = authors.find((foundAuthor => foundAuthor.id == id))
-    setPickedAuthor(author)
-    setIsLoaded(true)
+    if (author) {
+      setPickedAuthor(author)
+    } else {
+      setPickedAuthor({
+        name: "", 
+        books: []
+      })
+    }
   }, [authors])
 
   const displayedAuthorsBooks = pickedAuthor.books.map((book) => {
