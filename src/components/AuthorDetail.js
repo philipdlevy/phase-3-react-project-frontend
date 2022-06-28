@@ -24,7 +24,7 @@ function AuthorDetail({ authors }) {
   }, [authors])
 
   const displayedAuthorsBooks = pickedAuthor.books.map((book) => {
-    return <li className='fontcolor' key={book.
+    return <li className='fontcolor, bookListPosition' key={book.
     id}>{book.title}</li>
   })
 
@@ -37,6 +37,7 @@ function AuthorDetail({ authors }) {
         <h2 className="underline">Authors books in your list</h2>
         {displayedAuthorsBooks}
         <button
+        className="backToAuthorButton"
           onClick={() => history.push("/authors")}>
           Back to Authors
         </button>

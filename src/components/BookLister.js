@@ -7,7 +7,7 @@ function BookLister({ books }) {
 
 
   const displayedBooks = books.map((book) => {
-    return <Link to={`/books/${book.id}`}> <li className='fontcolor' key={book.
+    return <Link to={`/books/${book.id}`}> <li className='fontcolor, bookListPosition' key={book.
     id}>{book.title}</li> </Link>
   })
 

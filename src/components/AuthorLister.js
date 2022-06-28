@@ -17,7 +17,7 @@ function AuthorLister({ authors }) {
 
 
     const displayedAuthors = authors.map((author) => {
-      return <Link to={`/authors/${author.id}`}> <li className='fontcolor' key={author.id}>{author.name}</li> </Link>
+      return <Link to={`/authors/${author.id}`}> <li className='fontcolor, authorListPosition' key={author.id}>{author.name}</li> </Link>
     })
 
   return (
@@ -25,8 +25,10 @@ function AuthorLister({ authors }) {
       <h2>Authors</h2>
         {displayedAuthors}
         <br></br>
-        <button onClick={() => history.push("/books")}>
-            Back to Books
+        <button 
+        className='backToAuthorButton'
+          onClick={() => history.push("/books")}>
+          Back to Books
         </button>
     </div>
   )

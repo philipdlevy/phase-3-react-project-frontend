@@ -70,7 +70,7 @@ function AddBook() {
 
   return (
     <div>
-      <h1 className='fontcolor' style={{textAlign:"center"}}>Add a new book</h1>
+      <h1 className='fontcolor, addBookStyling'>Add a new book</h1>
 
       <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
         <label className='fontcolor'>Title</label>
