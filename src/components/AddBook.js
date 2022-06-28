@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function AddBook() {
+function AddBook({ books, setBooks, setToggleBook, toggleBook }) {
   const [titleData, setTitleData] = useState("")
   const [authorData, setAuthorData] = useState("")
   const [descriptionData, setDescriptionData] = useState("")
@@ -34,7 +34,11 @@ function AddBook() {
         body: JSON.stringify(newBookData), 
       })
       .then((resp) => resp.json())
-      .then(history.push("/books"))
+      .then((bookData) => {
+        setBooks([...books, bookData])
+        setToggleBook(!toggleBook)
+        history.push("/books")
+      })
       .catch((error) => alert(error));
   }
 

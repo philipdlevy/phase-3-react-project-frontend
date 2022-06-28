@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 
 function BookLister({ books }) {
-  const { id, title, author_name, description, price, pages } = books
+  
 
 
   const displayedBooks = books.map((book) => {

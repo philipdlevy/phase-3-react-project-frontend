@@ -25,7 +25,9 @@ function App() {
     
     fetch("http://localhost:9292/books")
     .then((resp) => resp.json())
-    .then((books) => setBooks(books))
+    .then((books) => {
+      setBooks(books)
+    })
     .catch((error) => alert(error)) 
   }, [toggleBook])
 
@@ -40,9 +42,7 @@ function App() {
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
     setBooks(updatedBookArray)
-    // console.log("books", books)
 }
-
 
   return (
     <div className="bg">
@@ -58,7 +58,7 @@ function App() {
       </Route> 
 
       <Route exact path="/books/new">  
-        <AddBook />
+        <AddBook setBooks={setBooks} books={books} toggleBook={toggleBook} setToggleBook={setToggleBook}/>
       </Route>
 
       <Route path="/books/:id"> 

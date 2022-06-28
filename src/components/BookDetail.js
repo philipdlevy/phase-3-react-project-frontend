@@ -12,7 +12,7 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
     pages: 0
   })
   const [editing, setEditing] = useState(false)
-  console.log("pickedBook", pickedBook)
+  
 
   // const [toggle, setToggle] = useState(true)
  
