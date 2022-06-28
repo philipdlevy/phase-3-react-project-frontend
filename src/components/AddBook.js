@@ -38,35 +38,6 @@ function AddBook() {
       .catch((error) => alert(error));
   }
 
-  // fetch for updating a book
-  // function handleUpdatedBook(event) {
-  //   event.preventDefault()
-  
-
-  //   if (titleData.trim() == "" || authorData.trim() == "" || descriptionData.trim == "" || descriptionData.trim() == "" || priceData.trim() == "" || pagesData.trim() == "") {
-  //     return alert("Missing Data")
-  //   }
-
-  //   const updateBookData = {
-  //     title: titleData, 
-  //     author_name: authorData, 
-  //     description: descriptionData, 
-  //     price: priceData, 
-  //     pages: pagesData
-  //   };
-
-  //   fetch(`http://localhost:9292/books/${id}`, {
-  //       method: "PATCH", 
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       }, 
-  //       body: JSON.stringify(updateBookData), 
-  //     })
-  //     .then((resp) => resp.json())
-      // .then(history.push("/books"))
-  //     .catch((error) => alert(error));
-  // }
-
 
   return (
     <div>

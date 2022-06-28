@@ -3,17 +3,8 @@ import {useHistory} from "react-router-dom"
 import {Link} from "react-router-dom"
 
 function AuthorLister({ authors }) {
-    // const [authors, setAuthors] = useState([])
 
     const history = useHistory();
-
-    // useEffect(() => {
-    //     fetch("http://localhost:9292/authors")
-    //     .then((resp) => resp.json())
-    //     .then((authors) => setAuthors(authors))
-    
-    //     .catch((error) => alert(error)) 
-    //   }, [])
 
 
     const displayedAuthors = authors.map((author) => {
