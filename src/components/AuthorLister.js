@@ -8,7 +8,11 @@ function AuthorLister({ authors }) {
 
 
     const displayedAuthors = authors.map((author) => {
+      // console.log(author)
+      // debugger
+      if (author.books.length > 0) {
       return <Link to={`/authors/${author.id}`}> <li className='fontcolor, authorListPosition' key={author.id}>{author.name}</li> </Link>
+      } 
     })
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
 function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
@@ -8,19 +8,10 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
     const [priceData, setPriceData] = useState(pickedBook.price)
     const [pagesData, setPagesData] = useState(pickedBook.pages)
 
-
-
     const history = useHistory();
-
-
 
     function handleSubmit(event) {
         event.preventDefault()
-      
-    
-        // if (titleData.trim() == "" || authorData.trim() == "" || descriptionData.trim() == "" || priceData || pagesData.trim() == "") {
-        //   return alert("Missing Data")
-        // }
     
         const updatedBookData = {
           title: titleData, 

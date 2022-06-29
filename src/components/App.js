@@ -30,14 +30,7 @@ function App() {
     })
     .catch((error) => alert(error)) 
   }, [toggleBook])
-
-
-  // useEffect(() => {
-  //   fetch("http://localhost:9292/authors")
-  //   .then((resp) => resp.json())
-  //   .then((authors) => setAuthors(authors))
-  //   .catch((error) => alert(error)) 
-  // }, [])
+  
 
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
