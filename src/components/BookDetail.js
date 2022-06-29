@@ -3,7 +3,7 @@ import {useParams, useHistory} from "react-router-dom"
 
 import EditBook from "./EditBook"
 
-function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
+function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook, toggleAuthor, setToggleAuthor }) {
   const [pickedBook, setPickedBook] = useState({
     title: "", 
     description: "", 
@@ -13,8 +13,6 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
   })
   const [editing, setEditing] = useState(false)
   
-
-  // const [toggle, setToggle] = useState(true)
  
   const history = useHistory();
   let {id} = useParams()
@@ -43,14 +41,12 @@ function BookDetail({ books, onDeleteBook, toggleBook, setToggleBook }) {
     .then((resp) => resp.json())
     .then(() => {
       onDeleteBook(id)
+      setToggleAuthor(!toggleAuthor)
       history.push("/books")
     })
     .catch((error) => alert(error));
   }
 
-
-  // const {title, description, price, pages } = pickedBook
-  // const author_name = pickedBook.author.name
 
   if (editing) {
     return <EditBook pickedBook={pickedBook} toggleBook={toggleBook} setToggleBook={setToggleBook} setEditing={setEditing}/>

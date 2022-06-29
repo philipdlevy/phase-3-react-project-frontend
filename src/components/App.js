@@ -13,7 +13,10 @@ import AuthorDetail from './AuthorDetail';
 function App() {
   const [books, setBooks] = useState([])
   const [authors, setAuthors] = useState([])
+  // This state is used to make the fetch in the useEffect run again 
+  // to listen for changes. When we make a change, we need the fetch to rerender
   const [toggleBook, setToggleBook] = useState(false)
+  const [toggleAuthor, setTogglAuthor] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:9292/authors")
@@ -29,8 +32,8 @@ function App() {
       setBooks(books)
     })
     .catch((error) => alert(error)) 
-  }, [toggleBook])
-  
+  }, [toggleBook, toggleAuthor])
+
 
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
@@ -55,7 +58,7 @@ function App() {
       </Route>
 
       <Route path="/books/:id"> 
-        <BookDetail books={books} onDeleteBook={onDeleteBook} toggleBook={toggleBook} setToggleBook={setToggleBook}/>
+        <BookDetail books={books} onDeleteBook={onDeleteBook} toggleBook={toggleBook} setToggleBook={setToggleBook} toggleAuthor={toggleAuthor} setToggleAuthor={setTogglAuthor}/>
       </Route>
 
       <Route exact path="/authors"> 

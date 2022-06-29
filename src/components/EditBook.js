@@ -13,6 +13,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
     function handleSubmit(event) {
         event.preventDefault()
     
+        debugger
         const updatedBookData = {
           title: titleData, 
           author_name: authorData, 
@@ -20,6 +21,8 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
           price: priceData, 
           pages: pagesData
         };
+        debugger
+        console.log("updatedbookData", updatedBookData)
     
         fetch(`http://localhost:9292/books/${pickedBook.id}`, {
             method: "PATCH", 
@@ -30,12 +33,12 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
           })
           .then((resp) => resp.json())
           .then(() => {
-            setToggleBook(!toggleBook); console.log(toggleBook)
+            setToggleBook(!toggleBook)
           })
           .then(setEditing(false))
           .then(history.push("/books"))
           .catch((error) => alert(error));
-      }
+        }
 
   return (
     <div>
@@ -44,6 +47,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
         <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
         <label className='fontcolor'>Title</label>
         <input 
+        className='formLook'
         value={titleData}
         type="text" 
         name="title"
@@ -51,6 +55,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
         /><br/>
         <label className='fontcolor'>Author</label>
         <input 
+        className='formLook'
         value={authorData}
         type="text" 
         name="author_name"
@@ -58,6 +63,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
         /><br/>
         <label className='fontcolor'>Description</label>
         <input 
+        className='formLook'
         value={descriptionData}
         type="text" 
         name="description"
@@ -65,6 +71,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
         /><br/>
         <label className='fontcolor'>Price</label>
         <input 
+        className='formLook'
         value={priceData}
         type="text" 
         name="price"
@@ -72,6 +79,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
         /><br/>
         <label className='fontcolor'>Pages</label>
         <input 
+        className='formLook'
         value={pagesData}
         type="text" 
         name="pages"

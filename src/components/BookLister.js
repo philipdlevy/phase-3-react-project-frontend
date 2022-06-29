@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Link} from "react-router-dom"
 
 
 function BookLister({ books }) {
   
-
-
   const displayedBooks = books.map((book) => {
     return <Link to={`/books/${book.id}`}> <li className='fontcolor, bookListPosition' key={book.
     id}>{book.title}</li> </Link>
