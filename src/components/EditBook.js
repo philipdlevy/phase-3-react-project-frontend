@@ -13,7 +13,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
     function handleSubmit(event) {
         event.preventDefault()
     
-        debugger
+        
         const updatedBookData = {
           title: titleData, 
           author_name: authorData, 
@@ -21,7 +21,6 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
           price: priceData, 
           pages: pagesData
         };
-        debugger
         console.log("updatedbookData", updatedBookData)
     
         fetch(`http://localhost:9292/books/${pickedBook.id}`, {
@@ -38,7 +37,7 @@ function EditBook({ pickedBook, toggleBook, setToggleBook, setEditing }) {
           .then(setEditing(false))
           .then(history.push("/books"))
           .catch((error) => alert(error));
-        }
+    }
 
   return (
     <div>

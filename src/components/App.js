@@ -38,7 +38,7 @@ function App() {
   function onDeleteBook(id) {
     const updatedBookArray = books.filter(book => book.id != parseInt(id))
     setBooks(updatedBookArray)
-}
+  }
 
   return (
     <div className="bg">
