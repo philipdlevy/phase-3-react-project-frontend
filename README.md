@@ -13,7 +13,7 @@ You can delete books you don't want anymore or edit them if the book has changed
 Fork and clone
 run npm install and npm start
 Open [http://localhost:3000] to view it in your browser.
-Follow directions for beckend [url here]
+Follow directions for backend [https://github.com/philipdlevy/phase-3-sinatra-react-project-backend]
 
 ### LICENSING (MIT)
 Copyright (c) {{ 2022 }} 
